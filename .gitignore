@@ -2,3 +2,4 @@ nbproject/*
 *.class
 manifest.mf
 build.xml
+/build/
