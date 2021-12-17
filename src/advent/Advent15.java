@@ -7,8 +7,6 @@ import java.util.stream.*;
 
 public class Advent15 {
 
-    private static final Class<?>[] NO_REMOVE_IMPORT = new Class<?>[]{Stream.class, List.class};
-
     private static String readFile() {
         try {
             return new String(Files.readAllBytes(new File("C:/advent/a1.txt").toPath()));
@@ -121,11 +119,7 @@ public class Advent15 {
             for (int x = 0; x < board.length; x++) {
                 for (int y = 0; y < board.length; y++) {
                     Point p = board[x][y];
-                    Point npp = p;
-                    if (npp == null) {
-                        npp = new Point(x, y, 0);
-                    }
-                    for (Point o : next(npp)) {
+                    for (Point o : next(p == null ? new Point(x, y, 0) : p)) {
                         if (o == null) {
                             continue;
                         }
