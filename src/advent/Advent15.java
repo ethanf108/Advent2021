@@ -15,47 +15,6 @@ public class Advent15 {
         }
     }
 
-    public static class si implements Iterator<String> {
-
-        private final String[] ll;
-        private int i = 0;
-
-        public si(String[] d) {
-            this.ll = d;
-        }
-
-        @Override
-        public boolean hasNext() {
-            return i < ll.length;
-        }
-
-        @Override
-        public String next() {
-            return ll[i++];
-        }
-
-    }
-
-    static int max(int... l) {
-        int m = 0;
-        for (int i : l) {
-            if (i > m) {
-                m = i;
-            }
-        }
-        return m;
-    }
-
-    static int min(int... l) {
-        int m = 99999999;
-        for (int i : l) {
-            if (i < m) {
-                m = i;
-            }
-        }
-        return m;
-    }
-
     static Integer[][] values;
 
     static Point[][] board;
